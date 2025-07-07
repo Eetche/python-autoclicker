@@ -133,7 +133,7 @@ def new_scen_hand():
 
 TkRoot = tk.Tk()
 TkRoot.title("Автокликер")
-TkRoot.geometry("600x100")
+TkRoot.geometry("600x150")
 
 TkStyle = ttk.Style(TkRoot)
 TkStyle.theme_use('clam')
@@ -172,6 +172,15 @@ def end_recording():
     end_rec.place_forget()
 
 end_rec = ttk.Button(TkRoot, text="Закончить запись", command=end_recording)
+
+
+def go_latest():
+    with open(newest_file(SCENARIOS_PATH)) as file:
+        work(file.read())
+
+latest_btn = ttk.Button(TkRoot, text="Начать последний сценарий", command=go_latest)
+latest_btn.pack()
+latest_btn.place(x=225, y=100)
 
 keyboard.on_press(key_push)
 
