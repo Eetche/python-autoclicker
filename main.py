@@ -32,18 +32,9 @@ def work(intsructions_arg):
 
     if (type(intsructions_arg) == str):
         intsructions_arg = intsructions_arg.strip('[]').replace(' ', '').split(',')
-
-    coordinates_pairs = 0
-
+        
     for i in range(len(intsructions_arg) - 1):
         intsructions_arg[i] = int(intsructions_arg[i])
-
-    # count how many pairs of numbers in the list
-    for i in intsructions_arg:
-        coordinates_pairs += 1
-
-    coordinates_pairs /= 2
-    coordinates_pairs = int(coordinates_pairs)
 
     coordinates = []
 
